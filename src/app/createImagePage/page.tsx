@@ -20,7 +20,7 @@ const CreateImagePage = () => {
 
     try {
       const response = await fetch(
-        "https://api-inference.huggingface.co/models/prompthero/openjourney-v4",
+        "https://api-inference.huggingface.co/models/goofyai/cyborg_style_xl",
         {
           method: "POST",
           headers: {
@@ -49,7 +49,7 @@ const CreateImagePage = () => {
       <h1 className="text-3xl font-bold mb-4">Create Image</h1>
       <form className="w-64">
         <div className="mb-4">
-          <label htmlFor="title" className="text-sm text-gray-600">
+          <label htmlFor="title" className="text-sm text-gray-400">
             Title:
           </label>
           <input
@@ -62,7 +62,7 @@ const CreateImagePage = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="prompt" className="text-sm text-gray-600">
+          <label htmlFor="prompt" className="text-sm text-gray-400">
             Prompt:
           </label>
           <input

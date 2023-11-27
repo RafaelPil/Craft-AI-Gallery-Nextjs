@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/app/styles/Home.module.css";
-import Logo from "../../public/assets/blurLogo.png";
+import Logo from "../../public/assets/GoatScriptsLogo.png";
 import { UserButton, useUser } from "@clerk/nextjs";
 
 export default function Header() {
@@ -17,9 +17,13 @@ export default function Header() {
       </section>
       <section className={styles.nav}>
         <section className={styles.nav_items}>
-          <Link href="/my" className={styles.link}>
+          <Link href="/generated" className={styles.link}>
             <p>GENERATED</p>
           </Link>
+          <Link href="/liked" className={styles.link}>
+            <p>LIKED</p>
+          </Link>
+          <p>PROFILE</p>
         </section>
         <section className={styles.searchSection}>
           <div className={styles.searchContainer}>
