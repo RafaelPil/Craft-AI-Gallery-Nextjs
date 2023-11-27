@@ -52,7 +52,7 @@ const CreateImagePage = () => {
         <h1 className="text-3xl font-bold mb-4">Create Image</h1>
         <form className="w-64">
           <div className="mb-4">
-            <label htmlFor="title" className="text-sm text-gray-400">
+            <label htmlFor="title" className="text-sm text-gray-200">
               Title:
             </label>
             <input
@@ -61,11 +61,11 @@ const CreateImagePage = () => {
               value={title}
               onChange={handleTitleChange}
               placeholder="Enter title"
-              className="w-full border border-gray-300 rounded px-2 py-1"
+              className="w-full border border-gray-200 rounded px-2 py-1"
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="prompt" className="text-sm text-gray-400">
+            <label htmlFor="prompt" className="text-sm text-gray-200">
               Prompt:
             </label>
             <input
@@ -74,13 +74,13 @@ const CreateImagePage = () => {
               value={prompt}
               onChange={handlePromptChange}
               placeholder="Enter prompt"
-              className="w-full border border-gray-300 rounded px-2 py-1"
+              className="w-full border border-gray-200 rounded px-2 py-1"
             />
           </div>
           <button
             type="button"
             onClick={handleGenerateClick}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="bg-[#2ECC71] text-white px-4 py-2 rounded"
           >
             Generate
           </button>
@@ -96,7 +96,7 @@ const CreateImagePage = () => {
                 width={400}
                 height={300}
               />
-              <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+              <button className="mt-2 bg-[#2ECC71] text-white px-4 py-2 rounded">
                 Upload
               </button>
             </div>
