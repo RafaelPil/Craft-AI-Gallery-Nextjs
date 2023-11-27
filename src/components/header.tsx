@@ -5,8 +5,12 @@ import styles from "@/app/styles/Home.module.css";
 import Logo from "../../public/assets/GoatScriptsLogo.png";
 import { UserButton, useUser } from "@clerk/nextjs";
 
-export default function Header() {
+export default function Header({ setSearchQuery }) {
   const { user, isLoaded } = useUser();
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <section className={styles.header}>
@@ -32,6 +36,7 @@ export default function Header() {
               type="text"
               placeholder="Search for image"
               className={styles.inputField}
+              onChange={handleSearchChange}
             />
           </div>
         </section>
