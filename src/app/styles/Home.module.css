@@ -121,6 +121,7 @@
   border-radius: 0.2rem;
   outline: none;
   font-family: "Proto Mono", Helvetica, Arial, sans-serif;
+  margin-right: 16px;
 }
 
 .user_button {

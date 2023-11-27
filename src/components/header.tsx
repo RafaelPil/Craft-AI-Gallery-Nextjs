@@ -35,9 +35,10 @@ export default function Header() {
         <section>
           {isLoaded && user && (
             <div className={styles.user_button}>
-              <Link href="/createImage" className="mr-4">
+              <Link href="/createImagePage">
                 <button className={styles.generate_btn}>GENERATE</button>
               </Link>
+
               <UserButton afterSignOutUrl="/" />
             </div>
           )}

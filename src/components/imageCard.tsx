@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 type imageProp = {
   imageUrl: string;
@@ -8,6 +9,11 @@ type imageProp = {
 };
 
 const ImageCard = ({ imageUrl, title, prompt, createdBy }: imageProp) => {
+  const [isLiked, setIsLiked] = useState(false);
+  const handleLikeToggle = () => {
+    setIsLiked((prevIsLiked) => !prevIsLiked);
+  };
+
   return (
     <div className="relative overflow-hidden group rounded-md shadow-md mb-2">
       <img src={imageUrl} alt="NFT" className="object-cover w-[400px] h-full" />
@@ -17,6 +23,16 @@ const ImageCard = ({ imageUrl, title, prompt, createdBy }: imageProp) => {
           {prompt && <p className="mb-1"> {prompt}</p>}
           {createdBy && <p>{createdBy}</p>}
         </div>
+      </div>
+      <div className="absolute top-0 right-0 p-4">
+        <button
+          onClick={handleLikeToggle}
+          className={`text-white focus:outline-none ${
+            isLiked ? "text-red-500" : ""
+          }`}
+        >
+          {isLiked ? "❤️ Liked" : "🤍 Like"}
+        </button>
       </div>
     </div>
   );

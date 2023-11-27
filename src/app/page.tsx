@@ -1,6 +1,8 @@
+'use client'
 import styles from "@/app/styles/Home.module.css";
 import Header from "@/components/header";
 import ImageCard from "@/components/imageCard";
+import { useState } from "react";
 
 const itemData = [
   {
@@ -54,6 +56,16 @@ const itemData = [
 ];
 
 export default function Home() {
+  const [isCreateImageOpen, setIsCreateImageOpen] = useState(false);
+
+  const openCreateImageDialog = () => {
+    setIsCreateImageOpen(true);
+  };
+
+  const closeCreateImageDialog = () => {
+    setIsCreateImageOpen(false);
+  };
+  
   return (
     <div className="grid grid-cols-4 gap-2 mb-14 px-36">
       {itemData.map((item, index) => (
