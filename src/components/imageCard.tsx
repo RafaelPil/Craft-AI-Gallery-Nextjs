@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import ImageModal from "./imageModal";
 
 type imageProp = {
   imageUrl: string;

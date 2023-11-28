@@ -7,9 +7,9 @@ import { useState } from "react";
 
 const itemData = [
   {
-    img: "https://ipfs.io/ipfs/QmZcRZu2cMJG9KUSta6WTrRek647WSG5mJZLhimwbC2y56",
+    img: "https://www.thestreet.com/.image/t_share/MTgyMDU5NDcwMTc4NzU1NzE1/boredape1.jpg",
     title: "Image 1",
-    prompt: "Describe the image",
+    prompt: "Describe the image prompt",
     createdBy: "User 1",
   },
   {
@@ -98,6 +98,9 @@ export default function Home() {
       {isModalOpen && selectedImageIndex !== null && (
         <ImageModal
           imageUrl={filteredData[selectedImageIndex].img}
+          title={filteredData[selectedImageIndex].title}
+          prompt={filteredData[selectedImageIndex].prompt}
+          createdBy={filteredData[selectedImageIndex].createdBy}
           onClose={handleCloseModal}
         />
       )}
