@@ -35,7 +35,7 @@ const ImageModal = ({ imageUrl, onClose, title, prompt, createdBy }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80">
       <div
         ref={modalRef}
         className="flex max-w-screen-lg max-h-screen overflow-hidden"

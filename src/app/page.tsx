@@ -78,7 +78,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <>
       <Header setSearchQuery={setSearchQuery} />
 
       <div className="grid grid-cols-4 gap-2 mb-14 px-36 pt-36">
@@ -104,6 +104,6 @@ export default function Home() {
           onClose={handleCloseModal}
         />
       )}
-    </div>
+    </>
   );
 }

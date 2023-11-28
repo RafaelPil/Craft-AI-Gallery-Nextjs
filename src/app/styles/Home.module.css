@@ -21,7 +21,6 @@
     url(../../../public/assets/blurBackground.png);
   background-size: cover;
   font-family: "Proto Mono", Helvetica, Arial, sans-serif;
-  margin: 0 5rem;
 }
 
 .header {
@@ -38,7 +37,7 @@
   transition: all 0.5s ease 0s;
   width: 100%;
   z-index: 100;
-  padding: 0 13rem;
+  padding: 0 14rem;
 }
 
 .logo {

@@ -18,7 +18,10 @@ const ImageCard = ({
 }: imageProp) => {
   const [isLiked, setIsLiked] = useState(false);
 
-  const handleLikeToggle = () => {
+  const handleLikeToggle = (e) => {
+    // Prevent the click event from propagating to the parent container
+    e.stopPropagation();
+
     setIsLiked((prevIsLiked) => !prevIsLiked);
   };
 
@@ -28,7 +31,7 @@ const ImageCard = ({
 
   return (
     <div
-      className="relative overflow-hidden group rounded-md shadow-md mb-2"
+      className="relative overflow-hidden group rounded-md shadow-md mb-2 cursor-pointer"
       onClick={handleImageClick}
     >
       <img src={imageUrl} alt="NFT" className="object-cover w-[400px] h-full" />
@@ -41,7 +44,7 @@ const ImageCard = ({
       </div>
       <div className="absolute top-0 right-0 p-4">
         <button
-          onClick={handleLikeToggle}
+          onClick={(e) => handleLikeToggle(e)}
           className={`text-white focus:outline-none ${
             isLiked ? "text-red-500" : ""
           }`}
