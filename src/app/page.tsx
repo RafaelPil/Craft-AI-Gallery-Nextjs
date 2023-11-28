@@ -81,7 +81,7 @@ export default function Home() {
     <>
       <Header setSearchQuery={setSearchQuery} />
 
-      <div className="grid grid-cols-4 gap-2 mb-14 px-36 pt-36">
+      <div className="grid grid-cols-4 gap-2 mb-14 px-56 pt-36">
         {filteredData.map((item, index) => (
           <ImageCard
             key={index}

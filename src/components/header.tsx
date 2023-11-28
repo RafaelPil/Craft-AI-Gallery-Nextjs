@@ -16,7 +16,7 @@ export default function Header({ setSearchQuery }) {
     <section className={styles.header}>
       <section className={styles.logo}>
         <Link href="/">
-          <Image src={Logo} alt="Logo" width={80} />
+          <Image src={Logo} alt="Logo" width={150} />
         </Link>
       </section>
       <section className={styles.nav}>
