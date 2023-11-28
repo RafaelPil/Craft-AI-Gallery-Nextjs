@@ -2,6 +2,7 @@
 import styles from "@/app/styles/Home.module.css";
 import Header from "@/components/header";
 import ImageCard from "@/components/imageCard";
+import ImageModal from "@/components/imageModal";
 import { useState } from "react";
 
 const itemData = [
@@ -57,6 +58,8 @@ const itemData = [
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   const filteredData = itemData.filter(
     (item) =>
@@ -64,21 +67,40 @@ export default function Home() {
       item.prompt.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const handleImageClick = (index) => {
+    setSelectedImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedImageIndex(null);
+  };
+
   return (
     <div>
-    <Header setSearchQuery={setSearchQuery} />
+      <Header setSearchQuery={setSearchQuery} />
 
-    <div className="grid grid-cols-4 gap-2 mb-14 px-36 pt-36">
-      {filteredData.map((item, index) => (
-        <ImageCard
-          key={index}
-          imageUrl={item.img}
-          title={item.title}
-          prompt={item.prompt}
-          createdBy={item.createdBy}
+      <div className="grid grid-cols-4 gap-2 mb-14 px-36 pt-36">
+        {filteredData.map((item, index) => (
+          <ImageCard
+            key={index}
+            imageUrl={item.img}
+            title={item.title}
+            prompt={item.prompt}
+            createdBy={item.createdBy}
+            onImageClick={() => handleImageClick(index)}
+            index={index}
+          />
+        ))}
+      </div>
+
+      {isModalOpen && selectedImageIndex !== null && (
+        <ImageModal
+          imageUrl={filteredData[selectedImageIndex].img}
+          onClose={handleCloseModal}
         />
-      ))}
+      )}
     </div>
-  </div>
   );
 }

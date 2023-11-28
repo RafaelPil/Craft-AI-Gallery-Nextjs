@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import ImageModal from "./imageModal";
 
 type imageProp = {
   imageUrl: string;
@@ -8,14 +9,29 @@ type imageProp = {
   createdBy?: string;
 };
 
-const ImageCard = ({ imageUrl, title, prompt, createdBy }: imageProp) => {
+const ImageCard = ({
+  imageUrl,
+  title,
+  prompt,
+  createdBy,
+  onImageClick,
+  index,
+}: imageProp) => {
   const [isLiked, setIsLiked] = useState(false);
+
   const handleLikeToggle = () => {
     setIsLiked((prevIsLiked) => !prevIsLiked);
   };
 
+  const handleImageClick = () => {
+    onImageClick(index);
+  };
+
   return (
-    <div className="relative overflow-hidden group rounded-md shadow-md mb-2">
+    <div
+      className="relative overflow-hidden group rounded-md shadow-md mb-2"
+      onClick={handleImageClick}
+    >
       <img src={imageUrl} alt="NFT" className="object-cover w-[400px] h-full" />
       <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300">
         <div className="absolute bottom-0 left-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
