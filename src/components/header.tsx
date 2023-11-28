@@ -5,7 +5,7 @@ import styles from "@/app/styles/Home.module.css";
 import Logo from "../../public/assets/GoatScriptsLogo.png";
 import { UserButton, useUser } from "@clerk/nextjs";
 
-export default function Header({ setSearchQuery }) {
+export default function Header({ setSearchQuery, onOpenGenerateModal }) {
   const { user, isLoaded } = useUser();
 
   const handleSearchChange = (e) => {
@@ -44,9 +44,12 @@ export default function Header({ setSearchQuery }) {
         <section>
           {isLoaded && user && (
             <div className={styles.user_button}>
-              <Link href="/createImagePage">
-                <button className={styles.generate_btn}>GENERATE</button>
-              </Link>
+              <button
+                onClick={() => onOpenGenerateModal()}
+                className={styles.generate_btn}
+              >
+                GENERATE
+              </button>
 
               <UserButton afterSignOutUrl="/" />
             </div>

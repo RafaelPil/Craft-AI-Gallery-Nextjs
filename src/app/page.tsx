@@ -1,5 +1,6 @@
 "use client";
 import styles from "@/app/styles/Home.module.css";
+import GenerateImageModal from "@/components/generateImageModal";
 import Header from "@/components/header";
 import ImageCard from "@/components/imageCard";
 import ImageModal from "@/components/imageModal";
@@ -61,6 +62,8 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
+  const [isGenerateModalOpen, setIsGenerateModalOpen] = useState(false);
+
   const filteredData = itemData.filter(
     (item) =>
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -77,9 +80,23 @@ export default function Home() {
     setSelectedImageIndex(null);
   };
 
+  const handleOpenGenerateModal = (index) => {
+    setSelectedImageIndex(index);
+    setIsGenerateModalOpen(true);
+  };
+
+  // New function to close the generate image modal
+  const handleCloseGenerateModal = () => {
+    setIsGenerateModalOpen(false);
+    setSelectedImageIndex(null);
+  };
+
   return (
     <>
-      <Header setSearchQuery={setSearchQuery} />
+      <Header
+        setSearchQuery={setSearchQuery}
+        onOpenGenerateModal={handleOpenGenerateModal}
+      />
 
       <div className="grid grid-cols-4 gap-2 mb-14 px-56 pt-36">
         {filteredData.map((item, index) => (
@@ -102,6 +119,12 @@ export default function Home() {
           prompt={filteredData[selectedImageIndex].prompt}
           createdBy={filteredData[selectedImageIndex].createdBy}
           onClose={handleCloseModal}
+        />
+      )}
+      {isGenerateModalOpen && selectedImageIndex !== null && (
+        <GenerateImageModal
+          
+          onClose={handleCloseGenerateModal}
         />
       )}
     </>
