@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const GenerateImageModal = ({ imageUrl, onClose }) => {
+const GenerateImageModal = ({ onClose }) => {
   const [title, setTitle] = useState("");
   const [prompt, setPrompt] = useState("");
   const [loading, setLoading] = useState(false);

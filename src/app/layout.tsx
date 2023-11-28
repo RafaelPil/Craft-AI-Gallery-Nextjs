@@ -17,7 +17,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={styles.main}>
-          <div className="w-full h-full">{children}</div>
+          <div>{children}</div>
         </body>
       </html>
     </ClerkProvider>

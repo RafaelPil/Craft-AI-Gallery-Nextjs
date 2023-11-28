@@ -1,10 +1,10 @@
 "use client";
+import { useState } from "react";
 import styles from "@/app/styles/Home.module.css";
 import GenerateImageModal from "@/components/generateImageModal";
 import Header from "@/components/header";
 import ImageCard from "@/components/imageCard";
 import ImageModal from "@/components/imageModal";
-import { useState } from "react";
 
 const itemData = [
   {
@@ -122,10 +122,7 @@ export default function Home() {
         />
       )}
       {isGenerateModalOpen && selectedImageIndex !== null && (
-        <GenerateImageModal
-          
-          onClose={handleCloseGenerateModal}
-        />
+        <GenerateImageModal onClose={handleCloseGenerateModal} />
       )}
     </>
   );
