@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 type imageProp = {
   imageUrl: string;
@@ -34,8 +35,9 @@ const ImageCard = ({
       className="relative overflow-hidden group rounded-md shadow-md cursor-pointer"
       onClick={handleImageClick}
     >
-      <img
+      <Image
         src={imageUrl}
+        alt="generated-images"
         className="rounded-md
         cursor-pointer relative z-0"
         width={500}

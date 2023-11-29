@@ -1,5 +1,6 @@
 // ImageModal.jsx
 import React, { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 
 const ImageModal = ({ imageUrl, onClose, title, prompt, createdBy }) => {
   const modalRef = useRef();
@@ -41,9 +42,9 @@ const ImageModal = ({ imageUrl, onClose, title, prompt, createdBy }) => {
         className="flex max-w-screen-lg max-h-screen overflow-hidden"
       >
         <div className="flex-shrink-0 w-400 h-600 relative overflow-hidden">
-          <img
+          <Image
             src={imageUrl}
-            alt="Modal"
+            alt="Modal-Image"
             className="w-[400px] h-[600px] object-cover rounded-tr-none rounded-br-none rounded-l-md"
           />
         </div>

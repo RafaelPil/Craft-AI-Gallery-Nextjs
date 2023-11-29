@@ -17,8 +17,7 @@
       rgba(0, 0, 0, 0.884),
       rgba(255, 255, 255, 0)
     ),
-    url(../../../public/assets/blurBackground.png);
-  background-size: cover;
+    url(../../../public/assets/bg5.jpg);
   font-family: "Proto Mono", Helvetica, Arial, sans-serif;
 }
 

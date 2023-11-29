@@ -5,52 +5,60 @@ import GenerateImageModal from "@/components/generateImageModal";
 import Header from "@/components/header";
 import ImageCard from "@/components/imageCard";
 import ImageModal from "@/components/imageModal";
+import img1 from "../../public/images/1.jpg";
+import img2 from "../../public/images/2.jpg";
+import img3 from "../../public/images/3.jpg";
+import img4 from "../../public/images/4.jpg";
+import img5 from "../../public/images/5.jpg";
+import img6 from "../../public/images/6.jpg";
+import img7 from "../../public/images/7.jpg";
+import img8 from "../../public/images/8.jpg";
 
 const itemData = [
   {
-    img: "https://www.thestreet.com/.image/t_share/MTgyMDU5NDcwMTc4NzU1NzE1/boredape1.jpg",
+    img: img1,
     title: "Image 1",
     prompt: "Describe the image prompt",
     createdBy: "User 1",
   },
   {
-    img: "https://gibbonsgazette.org/wp-content/uploads/2022/04/43YAWLITTZJLZIQTCP2JSS4KSM.jpg",
+    img: img2,
     title: "Image 2",
     prompt: "Describe the image",
     createdBy: "User 2",
   },
   {
-    img: "https://s3.ap-northeast-1.amazonaws.com/fio.one/live/wp-content/uploads/2021/12/ape3.png",
+    img: img3,
     title: "Image 3",
     prompt: "Describe the image",
     createdBy: "User 1",
   },
   {
-    img: "https://lh3.googleusercontent.com/vYHTJERH8I_tGAZ33OpPiqT-bo4zynYuHJEkcMkDL1Po22q-NuQYJbn2DxD7KcHOxfz3BlpAKXrW6zSl1JJL4jS6GPHy-scASuQynw=w1400-k",
+    img: img4,
     title: "Image 4",
     prompt: "Describe the image",
     createdBy: "User 1",
   },
   {
-    img: "https://assets-global.website-files.com/61ede842398e1b8a50ce8fd0/626831280acc3500ff828207_ape-8135-unnamed-1.png",
+    img: img5,
     title: "Image 5",
     prompt: "Describe the image",
     createdBy: "User 1",
   },
   {
-    img: "https://gibbonsgazette.org/wp-content/uploads/2022/04/43YAWLITTZJLZIQTCP2JSS4KSM.jpg",
+    img: img6,
     title: "Image 6",
     prompt: "Describe the image",
     createdBy: "User 1",
   },
   {
-    img: "https://s3.ap-northeast-1.amazonaws.com/fio.one/live/wp-content/uploads/2021/12/ape3.png",
+    img: img7,
     title: "Image 7",
     prompt: "Describe the image",
     createdBy: "User 1",
   },
   {
-    img: "https://lh3.googleusercontent.com/vYHTJERH8I_tGAZ33OpPiqT-bo4zynYuHJEkcMkDL1Po22q-NuQYJbn2DxD7KcHOxfz3BlpAKXrW6zSl1JJL4jS6GPHy-scASuQynw=w1400-k",
+    img: img8,
     title: "Image 8",
     prompt: "Describe the image",
     createdBy: "User 1",
@@ -98,7 +106,12 @@ export default function Home() {
         onOpenGenerateModal={handleOpenGenerateModal}
       />
 
-      <div className="grid grid-cols-4 gap-2 mb-14 px-56 pt-36">
+      <div
+        className="px-2 md:px-56 mt-36
+     columns-2 md:columns-3
+     lg:columns-4 mb-4
+     xl:columns-4 space-y-6 mx-auto"
+      >
         {filteredData.map((item, index) => (
           <ImageCard
             key={index}
